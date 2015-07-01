@@ -56,6 +56,10 @@
 		border: none;
 		color: #ddd;
 	}
+
+	.navbar-custom .nav>li>a#popo{
+		padding: 15px;
+	}
 }
 
 

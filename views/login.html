@@ -22,21 +22,15 @@
 		<div class="clearfix"></div>
 		<h3 style="text-align: center">Log In</h3>
 		<div class="error-wrapper">
+			{% if error %}
 			<div class="errmsg alert btn-squared alert-danger">
-				This is just an error message 
+				{{ error.message }}
 				
 				<button class="close" data-dismiss="alert" aria-hidden="true">
 					&times;
 				</button>
 			</div>
-			
-			<div class="errmsg alert btn-squared alert-success">
-				This is just an success message 
-				
-				<button class="close" data-dismiss="alert" aria-hidden="true">
-					&times;
-				</button>
-			</div>
+			{% endif %}
 		</div>
 		
 		<form method="POST" action="" role="form">
