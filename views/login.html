@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<base href="/">
+	<meta charset="utf-8">
+	<title>Log In | Winter Blog</title>
+	<link rel="stylesheet" href="bootflat/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="bootflat/css/bootflat.css">
+	<link rel="stylesheet" href="stylesheets/overrides.css">
+	<link rel="stylesheet" href="stylesheets/main.css">
+	<link rel="stylesheet" href="stylesheets/backend.css">
+</head>
+<body>
+	<script src="bootflat/js/jquery-1.10.1.min.js"></script>
+	<script src="bootflat/js/bootstrap.min.js"></script>
+	<script src="javascripts/search-popover.js"></script>
+	
+	<div class="col-md-4 col-lg-4 col-xs-10 col-xs-offset-1 col-md-offset-4 col-lg-offset- login-wrapper">
+		
+		<a href="#" class="pull-right btn btn-danger btn-squared" title="Tutup">&times;</a>
+		<div class="clearfix"></div>
+		<h3 style="text-align: center">Log In</h3>
+		<div class="error-wrapper">
+			<div class="errmsg alert btn-squared alert-danger">
+				This is just an error message 
+				
+				<button class="close" data-dismiss="alert" aria-hidden="true">
+					&times;
+				</button>
+			</div>
+			
+			<div class="errmsg alert btn-squared alert-success">
+				This is just an success message 
+				
+				<button class="close" data-dismiss="alert" aria-hidden="true">
+					&times;
+				</button>
+			</div>
+		</div>
+		
+		<form method="POST" action="" role="form">
+			<div class="form-group">
+				<div class="input-group">
+					<span class="btn-squared input-group-addon">
+						<span class="glyphicon glyphicon-user"></span>
+					</span>
+					<input type="text" autocomplete="off" required="required" class="form-control" placeholder="username" name="username">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="input-group">
+					<span class="btn-squared input-group-addon">
+						<span class="glyphicon glyphicon-asterisk"></span>
+					</span>
+					<input type="password" autocomplete="off" required="required" class="form-control" placeholder="password" name="password">
+				</div>
+			</div>
+			
+			<input type="submit" value="Log In" class="btn btn-squared btn-primary">
+			<input type="reset" value="Bersihkan" class="btn btn-squared btn-danger">
+		</form>
+	</div>
+	
+</body>
+</html>

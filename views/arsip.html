@@ -1,0 +1,90 @@
+{% extends 'base/base_front.html' %}
+{% block content %}
+<div class="post noborder">
+	<h2 class='pagetitle'>Arsip Blog</h2>
+	<article class="post-content">
+		Pada halaman ini anda dapat melihat konten-konten yang dapat diurutkan berdasarkan tanggal dipublikasikannya atau berdasarkan label tertentu.	
+	</article>
+</div>
+
+<div class="outerform noborder" style="clear:both">
+	<h5><span class="glyphicon glyphicon-time"></span> Tanggal</h5>
+	<form method="POST" role="form" class="kontakform form-inline" action="">
+		<div class="form-group">
+			<select class="form-control input-lg">
+				<option>Tahun</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<select class="form-control input-lg">
+				<option>Bulan</option>
+			</select>
+		</div>
+
+		<input type="submit" value="Lihat Arsip" class='btn btn-squared btn-default btn-lg'>
+		<input type="reset" value="Atur Ulang" class='btn btn-squared btn-danger btn-lg'>
+	</form>
+</div>
+
+<div class="all-labels post">
+	<h5><span class="glyphicon glyphicon-tag"></span> Label</h5>
+	<div class="labelwrap">
+		<a class="label label-primary" href="#">Label</a> 
+		<a class="label label-primary" href="#">Label</a> 
+		<a class="label label-primary" href="#">Label</a> 
+		<a class="label label-primary" href="#">Label</a> 
+		<a class="label label-primary" href="#">Label</a> 
+		<a class="label label-primary" href="#">Label</a>
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+<!-- POST LIST -->
+
+<div class="post">
+	<h3><a href="#">This is The Post Title</a></h3>
+	<div class="row">
+		<div class="post-meta-content pull-left col-sm-6 col-md-6 col-xs-12">
+			<div class="post-label">
+				<a class="label label-primary" href="#">Ini</a>
+				<a class="label label-primary" href="#">Adalah</a>
+				<a class="label label-primary" href="#">Label</a>
+			</div>
+
+			<small>Ditulis oleh Alwin Arrasyid. Diterbitkan pada <b>7 Mei 2015.</b></small>
+		</div>
+	</div>
+</div>
+
+<div class="post">
+	<h3><a href="#">This is The Post Title</a></h3>
+	<div class="row">
+		<div class="post-meta-content pull-left col-sm-6 col-md-6 col-xs-12">
+			<div class="post-label">
+				<a class="label label-primary" href="#">Ini</a>
+				<a class="label label-primary" href="#">Adalah</a>
+				<a class="label label-primary" href="#">Label</a>
+			</div>
+
+			<small>Ditulis oleh Alwin Arrasyid. Diterbitkan pada <b>7 Mei 2015.</b></small>
+		</div>
+	</div>
+</div>
+
+<div class="post">
+	<h3><a href="#">This is The Post Title</a></h3>
+	<div class="row">
+		<div class="post-meta-content pull-left col-sm-6 col-md-6 col-xs-12">
+			<div class="post-label">
+				<a class="label label-primary" href="#">Ini</a>
+				<a class="label label-primary" href="#">Adalah</a>
+				<a class="label label-primary" href="#">Label</a>
+			</div>
+
+			<small>Ditulis oleh Alwin Arrasyid. Diterbitkan pada <b>7 Mei 2015.</b></small>
+		</div>
+	</div>
+</div>
+{% endblock %}

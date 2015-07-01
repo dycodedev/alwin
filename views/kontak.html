@@ -1,0 +1,28 @@
+{% extends 'base/base_front.html' %}
+{% block content %}
+<div class="post noborder">
+	<h2 class='pagetitle'>Hubungi Saya</h2>
+	<article class="post-content">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae tortor a urna sagittis aliquam. Aliquam velit lectus, tincidunt eget mauris eget, egestas mattis sem. <br><br>
+	</article>
+</div>
+
+<div class="outerform">
+	<form method="POST" role="form" class="kontakform" action="">
+		<div class="form-group">
+			<input type="text" class="form-control input-lg" name="nama" placeholder='Nama Lengkap'>
+		</div>
+
+		<div class="form-group">
+			<input type="email" class="form-control input-lg" name="email" placeholder='Email'>
+		</div>
+
+		<div class='form-group'>
+			<textarea name="message" class="form-control input-lg" placeholder="Pesan"></textarea>
+		</div>
+
+		<input type="submit" value="Kirim" class='btn btn-squared btn-default btn-lg'>
+		<input type="reset" value="Bersihkan" class='btn btn-squared btn-danger btn-lg'>
+	</form>
+</div>
+{% endblock %}

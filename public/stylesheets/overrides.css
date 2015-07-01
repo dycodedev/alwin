@@ -1,0 +1,118 @@
+.navbar-custom .navbar-right{
+}
+
+.navbar-my-fixed-top{
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1003;
+}
+
+.navbar-custom a{
+	color: white;
+}
+
+.navbar-custom .navbar-nav>li>a{
+	font-weight: 700;
+	font-size: 16px;
+/*	padding: 15px 15px;*/
+	transition:.2s border-bottom;
+	-moz-transition:.2s border-bottom;
+	-webkit-transition:.2s border-bottom;
+	-o-transition:.2s border-bottom;
+}
+
+.navbar-custom .nav>li>a:hover{
+	background: none;
+	border-bottom: 2px solid white;
+}
+
+.navbar-custom .nav>li>a#popo{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+@media screen and (max-width: 767px){
+	.navbar-custom{
+/*		background-color: #434a54;*/
+		background-color: #3498db;
+	}
+	
+	.navbar-my-fixed-top{
+		position: fixed;
+	}
+	
+	.navbar-custom .navbar-toggle{
+		display: block;
+		background: white;
+	}
+	.navbar-custom .navbar-toggle span{
+		color: white;
+		background: #3498db;
+	}
+	
+	.navbar-custom .nav>li>a:hover{
+		background: none;
+		border: none;
+		color: #ddd;
+	}
+}
+
+
+@media screen and (min-width: 1200px){
+	
+	.navbar-custom .navbar-right{
+		margin-right:20px;
+	}
+	
+	.navbar-custom .navbar-header .navbar-brand{
+		font-size: 24px;
+		font-weight: bold;
+		padding: 25px 25px;
+		height: 70px;
+	}
+	
+	.navbar-custom .nav>li>a{
+		font-size: 22px;
+		padding: 24px 20px;
+	}
+	
+	.navbar-custom .nav>li>a:hover{
+		background: none;
+		border-bottom: 3px solid white;
+	}
+	
+	.popover{
+		right: 0;
+	}
+}
+
+.pager li a{
+	background: #3bafda;
+	border:1px solid #4fc1e9;
+}
+
+.pager li a:hover{
+	background: #4fc1e9;
+	border: 1px solid #4fc1e9;
+}
+
+.popover{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.popover .popover-content{
+	padding: 8px;
+}
+
+
+.form-group .form-control,
+.btn-squared{
+	border-radius: 0;
+}
+
+.kontakform textarea{
+	max-width: 100%;
+	min-height: 150px;
+}
