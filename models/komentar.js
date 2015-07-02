@@ -12,11 +12,11 @@ var maxLengthErrorMessage = 'Path {PATH} exceeds the maximum allowed length';
 var namaMaxLength = [50, maxLengthErrorMessage];
 var isiMaxLength = [600, maxLengthErrorMessage];
 
-var KomentarSchema = new mongoose.KomentarSchema({
+var KomentarSchema = new mongoose.Schema({
   nama: { type: String, default: 'Anonymous', maxlength: namaMaxLength },
   email: { type: String, required: true, validate: emailCustomValidator },
   isi: { type: String, required: true, maxlength: isiMaxLength },
   tanggal: { type: Date, required: true, default: Date.now }
 });
 
-module.exports = mongoose.model('komentar', KomentarSchema);
+module.exports = mongoose.model('Komentar', KomentarSchema);

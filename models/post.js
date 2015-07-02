@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Komentar = require('./kometar');
+var Komentar = require('./komentar');
 
 var PostSchema = new mongoose.Schema({
   judul: { type: String, required: true, maxlength: 100 },
