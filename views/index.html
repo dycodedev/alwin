@@ -1,16 +1,11 @@
 {% extends 'base/base_front.html' %}
 
 {% block content %}
+{% for post in posts %}
 	<div class="post">
-		<h3><a href="#">Post Title</a></h3>
+		<h3><a href="/baca/{{ post.slug }}">{{ post.judul }}</a></h3>
 		<article class="post-content">
-			Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.<br><br>
-
-	Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.<br><br>
-
-	What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.<br><br>
-
-	A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.
+			{{ post.konten }}
 		</article>
 
 
@@ -23,26 +18,27 @@
 
 			<div class="post-meta-content pull-left col-sm-6 col-md-6 col-xs-12">
 				<div class="post-label">
-					<a class="label label-primary" href="#">Ini</a>
-					<a class="label label-primary" href="#">Adalah</a>
-					<a class="label label-primary" href="#">Label</a>
+				{% for label in post.label %}
+					<a class="label label-primary" href="#">{{ label.nama }}</a>
+				{% endfor %}
 				</div>
 
-				<small> Diterbitkan pada <b>7 Mei 2015.</b></small>
+				<small> Diterbitkan pada <b>{{ post.tanggal.toDateString() }}</b></small>
 			</div>
 		</div>
 	</div>
+{% endfor %}
 
 	<div class="post">
 		<h3><a href="#">Post Title</a></h3>
 		<article class="post-content">
 			Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.<br><br>
 
-	Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.<br><br>
+			Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.<br><br>
 
-	What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.<br><br>
+			What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.<br><br>
 
-	A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.
+			A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.
 		</article>
 
 		<div class="row">

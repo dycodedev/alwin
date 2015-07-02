@@ -1,11 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var PesanModel = require('../models/pesan');
+var PostModel = require('../models/post');
 var mongooseHelper = require('../helpers/mongoose-helper');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Winter Blog' });
+  PostModel.find({}, function(error, result) {
+    if (error) {
+
+    }
+
+    res.render('index', {
+      title: 'Winter Blog',
+      posts: result
+    });
+  });
 });
 
 router.get('/kontak', function(req, res) {

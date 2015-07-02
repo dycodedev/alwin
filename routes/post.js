@@ -37,10 +37,8 @@ router.post('/tambah', function(req, res) {
   label = label.trim();
 
   // replace all punctuation except comma with empty string
-  label = label.replace(
-    /['!"#$%&\\'()\*+\-\.\/:;<=>?@\[\\\]\^_`{|}~'\ ]/g,
-    ""
-  );
+  var regex = /['!"#$%&\\'()\*+\-\.\/:;<=>?@\[\\\]\^_`{|}~'\ ]/g;
+  label = label.replace(regex, "");
 
   // split the labels into array
   var tempLabel = label.split(',');
