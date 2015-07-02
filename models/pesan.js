@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 function match(value) {
-  return /([a-zA-Z\_\.0-9]+)@([a-zA-Z\_\.0-9]+)\.([a-zA-Z\_\.0-9]{1,4})/.test(value);
+  var re = /([a-zA-Z\_\.0-9]+)@([a-zA-Z\_\.0-9]+)\.([a-zA-Z\_\.0-9]{1,4})/;
+  return re.test(value);
 }
 
 var emailCustomValidator = [match, 'Email is not valid'];
