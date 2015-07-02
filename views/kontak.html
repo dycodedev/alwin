@@ -7,18 +7,30 @@
 	</article>
 </div>
 
+<div class="error-wrapper">
+	{% if error.message %}
+	<div class="errmsg alert btn-squared alert-danger">
+		{{ error.message }}
+		
+		<button class="close" data-dismiss="alert" aria-hidden="true">
+			&times;
+		</button>
+	</div>
+	{% endif %}
+</div>
+
 <div class="outerform">
 	<form method="POST" role="form" class="kontakform" action="">
 		<div class="form-group">
-			<input type="text" class="form-control input-lg" name="nama" placeholder='Nama Lengkap'>
+			<input type="text" class="form-control input-lg" name="nama" required="required" placeholder='Nama Lengkap'>
 		</div>
 
 		<div class="form-group">
-			<input type="email" class="form-control input-lg" name="email" placeholder='Email'>
+			<input type="email" class="form-control input-lg" required="required" name="email" placeholder='Email'>
 		</div>
 
 		<div class='form-group'>
-			<textarea name="message" class="form-control input-lg" placeholder="Pesan"></textarea>
+			<textarea name="pesan" class="form-control input-lg" required="required" placeholder="Isi"></textarea>
 		</div>
 
 		<input type="submit" value="Kirim" class='btn btn-squared btn-default btn-lg'>

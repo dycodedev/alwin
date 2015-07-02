@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var flash = require('connect-flash');
 var swig = require('swig');
 var mongoose = require('mongoose');
 var config= require('./config/dev.local.js');
@@ -17,11 +18,11 @@ var MongoStore = require('connect-mongo')(session);
 
 var db = mongoose.connection;
 
-db.on('error', function handleError(err){
+db.on('error', function handleError(err) {
   console.error(err);
 });
 
-db.on('open', function handleOpen(){
+db.on('open', function handleOpen() {
   console.log('Connected to mongodb');
 });
 
@@ -54,8 +55,9 @@ app.use(session({
     password: config.mongodb.password
   })
 }));
+app.use(flash());
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.redirect('/index/');
 });
 app.use('/index/', indexRoutes);

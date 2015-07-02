@@ -22,7 +22,7 @@
 		<div class="clearfix"></div>
 		<h3 style="text-align: center">Log In</h3>
 		<div class="error-wrapper">
-			{% if error %}
+			{% if error.message %}
 			<div class="errmsg alert btn-squared alert-danger">
 				{{ error.message }}
 				

@@ -12,15 +12,19 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
+  var error = req.flash('loginError');
+
   if (req.session.username) {
     res.redirect('/');
     return;
   }
 
-  res.render('login');
+  console.log(error);
+
+  res.render('login', { error: error[0] });
 });
 
-router.get('/logout', function(req, res){
+router.get('/logout', function(req, res) {
 
   req.session.destroy(afterDestroy);
  
@@ -34,28 +38,32 @@ router.get('/logout', function(req, res){
 
 });
 
-router.post('/login', function(req, res){
+router.post('/login', function(req, res) {
   var dataAkun = {
     username: req.body.username,
     password: req.body.password
   };
 
-  akunModel.findOne(dataAkun, findAkun);
+  akunModel.findOne({ username: dataAkun.username }, findAkun);
 
   function findAkun(err, result) {
     if (err || result === null) {
-      res.render('login', {
-        error: new Error('Username atau password salah')
+      req.flash('loginError', {
+        name: 'AuthError',
+        message: 'Username atau password salah!'
       });
-
+      res.redirect('/dashboard/login');
       return;
     }
 
     var isPasswordMatch = bcrypt.compareSync(dataAkun.password, result.password);
 
     if (!isPasswordMatch) {
-      res.render('login', { error: new Error('Username atau password salah') });
-
+      req.flash('loginError', {
+        name: 'AuthError',
+        message: 'Username atau password salah!'
+      });
+      res.redirect('/dashboard/login');
       return;
     }
 
