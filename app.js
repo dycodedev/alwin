@@ -12,6 +12,7 @@ var config= require('./config/dev.local.js');
 
 var indexRoutes = require('./routes/index');
 var dashboardRoutes = require('./routes/dashboard');
+var postRoutes = require('./routes/post');
 
 var app = express();
 var MongoStore = require('connect-mongo')(session);
@@ -33,6 +34,9 @@ app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view cache', false);
+
+// no caching in development phase
+swig.setDefaults({ cache: false });
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -62,6 +66,7 @@ app.get('/', function(req, res) {
 });
 app.use('/index/', indexRoutes);
 app.use('/dashboard', dashboardRoutes);
+app.use('/post', postRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
