@@ -13,6 +13,7 @@ var namaMaxLength = [50, maxLengthErrorMessage];
 var isiMaxLength = [600, maxLengthErrorMessage];
 
 var KomentarSchema = new mongoose.Schema({
+  postId: { type: mongoose.Schema.Types.ObjectID}
   nama: { type: String, default: 'Anonymous', maxlength: namaMaxLength },
   email: { type: String, required: true, validate: emailCustomValidator },
   isi: { type: String, required: true, maxlength: isiMaxLength },
